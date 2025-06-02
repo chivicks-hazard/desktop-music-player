@@ -25,3 +25,4 @@ src/components/ui
 *.njsproj
 *.sln
 *.sw?
+src/ui/components/dump.tsx

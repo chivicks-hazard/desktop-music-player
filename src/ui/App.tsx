@@ -1,9 +1,9 @@
-import Player from "./components/Player";
+import AppRoutes from "./routes";
 
 function App() {
 	return (
 		<>
-			<Player />
+			<AppRoutes />
 		</>
 	);
 }

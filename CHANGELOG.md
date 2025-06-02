@@ -1,3 +1,6 @@
+- 2025-06-02 feat: add routing and sidebar for app navigation 
+
+ 
 - 2025-05-24 feat: add playing screen 
 
  The playing screen is now a work in progress and the first step to
