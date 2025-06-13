@@ -11,7 +11,7 @@ const PlayingBar = () => {
 	return (
 		<section
 			id="player"
-			className="bg-blue-900 pb-5 absolute bottom-0 left-0 right-0 z-5"
+			className="bg-blue-900 h-[10%] absolute bottom-0 left-0 right-0 z-5"
 		>
 			<Slider
 				min={0}
@@ -20,7 +20,7 @@ const PlayingBar = () => {
 				defaultValue={[40]}
 				className="[&_[role=slider]]:bg-blue-500
 				[&_.track]:bg-gray-700
-				[&_.range]:bg-green-500 
+				[&_.range]:bg-lime-500 
 				"
 			/>
 			<div className="flex flex-row justify-around w-3/4 items-center mx-auto mt-5">

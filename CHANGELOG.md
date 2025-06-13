@@ -1,3 +1,10 @@
+- 2025-06-13 feat: added a lot 
+
+ Most of the changes include:
+* Completing the scaffolding of the "Recently Playing" section
+* Added two new sections for /#/
+* Added a new page, /#/all-tracks
+
 - 2025-06-02 feat: add routing and sidebar for app navigation 
 
  
