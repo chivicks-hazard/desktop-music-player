@@ -8,7 +8,7 @@ app.on("ready", () => {
 		mainWindow.loadURL("http://localhost:8001");
 	} else {
 		mainWindow.loadFile(
-			path.join(app.getAppPath() + "/dist-react/index.html")
+			path.join(app.getAppPath() + "/dist-react/index.html"),
 		);
 	}
 });
