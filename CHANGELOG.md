@@ -1,3 +1,12 @@
+- 2025-06-17 feat: add getSongs function 
+
+ I created the music.js (to be .ts soon) file for the music logic of the
+app. The music stream and song details are works in progress.
+I also created the preload script which I'll work on in the future.
+
+- 2025-06-13 Remote Merge 1 
+
+ Check Changelog
 - 2025-06-13 feat: added a lot 
 
  Most of the changes include:
