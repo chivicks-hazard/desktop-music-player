@@ -1,3 +1,14 @@
+- 2025-06-30 feat(music): added songlist list and stream fn 
+
+ I was able to configure the src/electron/music.ts file to read song
+files from the system. With this, I was able to create two functions:
+one for getting the list of files in the specified folder and another
+for getting the song stream.
+
+I ran into a lot of compatability issues reading extracting the metadata
+of some files, and I suspected the root of it to be 'jsmediatags'. I'll
+see what I can do to resolve it in future updates.
+
 - 2025-06-17 feat: add getSongs function 
 
  I created the music.js (to be .ts soon) file for the music logic of the
