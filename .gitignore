@@ -28,3 +28,4 @@ src/components/ui
 *.sw?
 src/ui/components/dump.tsx
 src/electron/music.js
+src/electron/check.js

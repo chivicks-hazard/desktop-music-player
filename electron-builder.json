@@ -1,6 +1,11 @@
 {
 	"appId": "com.chivickshazard.first-electron",
-	"files": ["dist-electron", "dist-react"],
+	"files": [
+		"dist-electron",
+		"dist-react",
+		"package.json",
+		"!**/node_modules/*"
+	],
 	"mac": {
 		"target": "dmg"
 	},

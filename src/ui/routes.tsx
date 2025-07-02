@@ -5,9 +5,6 @@ import Home from "./pages/Home";
 import AllTracks from "./pages/AllTracks";
 
 const AppRoutes = () => {
-	console.log(window.location.pathname);
-	console.log(window.location.hash);
-
 	return (
 		<HashRouter>
 			<Routes>
