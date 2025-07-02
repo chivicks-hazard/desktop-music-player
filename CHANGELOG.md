@@ -1,3 +1,9 @@
+- 2025-07-03 feat(main): add preload script 
+
+ I really learnt a lot on how preload scripts work in Electron. There
+were a lot of bugs on the way 😅, but at least I now know how to
+structure the app better.
+
 - 2025-06-30 feat(music): added songlist list and stream fn 
 
  I was able to configure the src/electron/music.ts file to read song
