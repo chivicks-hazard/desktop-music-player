@@ -58,7 +58,7 @@ async function getSongList() {
 
 getSongList()
 	.then((songList) => {
-		console.log(songList);
+		console.log(songList[0]);
 	})
 	.catch((err) => console.log(err))
 	.finally(() => console.log("Done"));

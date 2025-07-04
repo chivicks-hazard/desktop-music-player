@@ -14,3 +14,8 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	addNumbers: (a: number, b: number) =>
 		ipcRenderer.invoke("addNumbers", a, b),
 });
+
+// Song API
+contextBridge.exposeInMainWorld("musicAPI", {
+	getSongList: () => ipcRenderer.invoke("getSongList"),
+});

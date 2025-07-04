@@ -1,3 +1,18 @@
+- 2025-07-04 feat(all-tracks): add getSongList to /#/all-tracks 
+
+ I was able to add the getSongList feature to the AllTracks page compo-
+nent, bringing life to the route. A really satisfying experience it was.
+The next step now is to add audio to the page so that it can start pla-
+ying.
+
+PS: I still need to go back and learn asynchronous JavaScript.
+
+- 2025-07-03 feat(main): add preload script 
+
+ I really learnt a lot on how preload scripts work in Electron. There
+were a lot of bugs on the way 😅, but at least I now know how to
+structure the app better.
+
 - 2025-07-03 feat(main): add preload script 
 
  I really learnt a lot on how preload scripts work in Electron. There

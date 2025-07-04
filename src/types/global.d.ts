@@ -8,5 +8,9 @@ declare global {
 			asyncIPC: () => Promise<string>;
 			addNumbers: (a: number, b: number) => Promise<number>;
 		};
+
+		musicAPI: {
+			getSongList: () => Promise<any[]>;
+		};
 	}
 }
