@@ -22,9 +22,6 @@ const Home = () => {
 
 	return (
 		<section className="h-[90dvh] px-5 pt-5 bg-gray-500">
-			<button className="p-2 bg-red-400 focus:bg-red-600 cursor-pointer">
-				Test IPC Button
-			</button>
 			<div id="recentlyPlayed" className="">
 				<h2 className="text-2xl font-bold text-white">
 					Recently Played

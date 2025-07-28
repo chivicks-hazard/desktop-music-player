@@ -1,3 +1,6 @@
+- 2025-07-28 feat: randow 
+
+ 
 - 2025-07-04 feat(all-tracks): add getSongList to /#/all-tracks 
 
  I was able to add the getSongList feature to the AllTracks page compo-

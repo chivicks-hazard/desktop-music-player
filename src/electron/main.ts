@@ -1,7 +1,6 @@
 import { app, BrowserWindow, ipcMain } from "electron";
 import path from "path";
 import { getSongList } from "./music.js";
-import { mainModule } from "process";
 
 function createWindow() {
 	const mainWindow = new BrowserWindow({

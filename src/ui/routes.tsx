@@ -1,4 +1,3 @@
-// import { Router } from "../lib/electron-router-dom.js";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Player from "./Player";
 import Home from "./pages/Home";
