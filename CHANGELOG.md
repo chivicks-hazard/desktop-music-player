@@ -1,3 +1,16 @@
+- 2025-08-09 feat(music): add audio streaming 
+
+ The app can finally play music. Using streams from the backend/electron
+process wasn't ideal due to memory overhead that I could possibly face.
+By disabling webSecurity, it allows the frontend to go into the
+computer's filesystem and read the audio file from it's location.
+
+I relearnt how states work, especially with React's asynchronous
+re-rendering. I learnt how to use React's Context API, enabling me to
+pass the audio player's reference throughout the application's frontend.
+
+My next focus now is to improve the app's UI and 'complete' it.
+
 - 2025-07-28 feat: randow 
 
  

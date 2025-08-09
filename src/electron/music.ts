@@ -1,7 +1,12 @@
-import { readdir } from "fs/promises";
-import { join, parse, extname } from "path";
+import { createReadStream } from "fs";
+import { readdir, readFile } from "fs/promises";
 import { read } from "jsmediatags";
 import { TagType } from "jsmediatags/types/index.js";
+import { extname, join, parse } from "path";
+
+interface Tag extends TagType {
+	fileName: string;
+}
 
 const rootDir = parse(process.cwd()).root;
 const songDir = rootDir + "/Users/HP/Music/Test";
@@ -33,9 +38,17 @@ async function getSongList() {
 	const songs = await getSongs(songDir);
 
 	for (const song of songs!) {
+		// let index: number = 0;
+
 		await new Promise((resolve, reject) => {
 			read(join(songDir, song), {
 				onSuccess: function (tag: TagType) {
+					let tempTap: Tag = tag as unknown as Tag;
+
+					// index++;
+					// tempTap.id = index;
+					tempTap.fileName = song;
+
 					songList.push(tag);
 					resolve(tag);
 				},
@@ -56,18 +69,34 @@ async function getSongList() {
 	return songList;
 }
 
-getSongList()
-	.then((songList) => {
-		console.log(songList[0]);
-	})
-	.catch((err) => console.log(err))
-	.finally(() => console.log("Done"));
+async function getSongStream(fileName: string) {
+	let stream: any = "";
 
-export { getSongList };
+	readFile(join(songDir, fileName), "utf-8").then((data: any) => {
+		stream = data;
+	});
+
+	return stream;
+}
+
+// getSongList()
+// 	.then((songList) => {
+// 		console.log(songList[0]);
+// 	})
+// 	.catch((err) => console.log(err))
+// 	.finally(() => console.log("Done"));
+
+// let songs = await getSongs(songDir);
+// console.log(songs);
 
 // Streaming
-// getSongs(songDir).then((songs) => {
-// 	readFile(join(songDir, songs?.[3]!), "utf-8").then((data) =>
-// 		console.log(data)
-// 	);
-// });
+getSongs(songDir).then((songs) => {
+	// readFile(join(songDir, songs?.[3]!), "utf-8").then((data) =>
+	// 	console.log(data)
+	// );
+});
+
+// ReadStream
+
+// Exports
+export { getSongList, getSongStream };

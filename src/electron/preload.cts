@@ -18,4 +18,6 @@ contextBridge.exposeInMainWorld("electronAPI", {
 // Song API
 contextBridge.exposeInMainWorld("musicAPI", {
 	getSongList: () => ipcRenderer.invoke("getSongList"),
+	// getSongStream: (fileName: string) =>
+	// 	ipcRenderer.invoke("getSongStream", fileName),
 });

@@ -1,6 +1,6 @@
 import { app, BrowserWindow, ipcMain } from "electron";
 import path from "path";
-import { getSongList } from "./music.js";
+import { getSongList, getSongStream } from "./music.js";
 
 function createWindow() {
 	const mainWindow = new BrowserWindow({
@@ -10,6 +10,7 @@ function createWindow() {
 				process.env.NODE_ENV === "development" ? "." : "..",
 				"/dist-electron/preload.cjs"
 			),
+			webSecurity: false,
 		},
 	});
 
@@ -52,6 +53,12 @@ app.whenReady().then(() => {
 
 		return list;
 	});
+
+	// ipcMain.handle("getSongStream", async (event, fileName: string) => {
+	// 	let stream = await getSongStream(fileName);
+
+	// 	return stream;
+	// });
 
 	createWindow();
 });

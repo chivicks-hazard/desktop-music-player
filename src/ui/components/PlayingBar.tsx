@@ -3,16 +3,60 @@ import { IoMdSkipBackward, IoMdSkipForward } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { pause, play } from "../../slices/playSlice";
 import { Slider } from "./slider";
+import { useContext, useEffect } from "react";
+import store from "@/store";
+import { AudioRefContext } from "../Player";
 
 const PlayingBar = () => {
 	const isPlaying = useSelector((state: any) => state.play.isPlaying);
+	// const { isPlaying, song } = store.getState().play;
 	const dispatch = useDispatch();
+	const audioRef = useContext(AudioRefContext);
+
+	const songDir = "C:/Users/HP/Music/Test";
+
+	const audioControl = () => {
+		if (isPlaying) {
+			dispatch(pause());
+		} else {
+			dispatch(play());
+		}
+
+		if (audioRef?.current) {
+			if (store.getState().play.isPlaying) {
+				audioRef.current.src = `${songDir}/${
+					store.getState().play.song
+				}`;
+				audioRef.current.play();
+			} else {
+				audioRef.current.pause();
+			}
+		}
+
+		console.log("UI: ", isPlaying);
+		console.log("Logic: ", store.getState().play.isPlaying);
+		console.log("Logic (song): ", store.getState().play.song);
+	};
+
+	useEffect(() => {
+		// if (audioRef.current) {
+		// 	if (isPlaying) {
+		// 		audioRef.current.src = `${songDir}/${song}`;
+		// 		audioRef.current.play();
+		// 	} else {
+		// 		audioRef.current.pause();
+		// 	}
+		// }
+
+		console.log(isPlaying);
+	}, []);
 
 	return (
 		<section
 			id="player"
 			className="bg-blue-900 h-[10%] absolute bottom-0 left-0 right-0 z-5"
 		>
+			<audio src="" ref={audioRef}></audio>
 			<Slider
 				min={0}
 				step={1}
@@ -30,15 +74,10 @@ const PlayingBar = () => {
 				<button
 					className="cursor-pointer p-1"
 					onClick={() => {
-						if (!isPlaying) {
-							dispatch(play());
-						} else {
-							dispatch(pause());
-						}
-						console.log(isPlaying);
+						audioControl();
 					}}
 				>
-					{!isPlaying ? <FaPlay /> : <FaPause />}
+					{isPlaying ? <FaPause /> : <FaPlay />}
 				</button>
 				<button className="cursor-pointer p-1">
 					<IoMdSkipForward />
