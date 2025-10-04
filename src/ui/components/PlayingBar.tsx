@@ -1,11 +1,11 @@
+import store from "@/store";
+import { useContext, useEffect } from "react";
 import { FaPause, FaPlay } from "react-icons/fa6";
 import { IoMdSkipBackward, IoMdSkipForward } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { pause, play } from "../../slices/playSlice";
-import { Slider } from "./slider";
-import { useContext, useEffect } from "react";
-import store from "@/store";
 import { AudioRefContext } from "../Player";
+import { Slider } from "./slider";
 
 const PlayingBar = () => {
 	const isPlaying = useSelector((state: any) => state.play.isPlaying);
@@ -54,7 +54,7 @@ const PlayingBar = () => {
 	return (
 		<section
 			id="player"
-			className="bg-blue-900 h-[10%] absolute bottom-0 left-0 right-0 z-5"
+			className="bg-[#2f2f2f] h-[10%] absolute bottom-0 left-0 right-0 z-5"
 		>
 			<audio src="" ref={audioRef}></audio>
 			<Slider
@@ -62,12 +62,12 @@ const PlayingBar = () => {
 				step={1}
 				max={100}
 				defaultValue={[40]}
-				className="[&_[role=slider]]:bg-blue-500
-				[&_.track]:bg-gray-700
-				[&_.range]:bg-lime-500 
+				className="[&_[role=slider]]:bg-zinc-500
+				[&_.track]:bg-slate-500
+				[&_.range]:bg-slate-200
 				"
 			/>
-			<div className="flex flex-row justify-around w-3/4 items-center mx-auto mt-5">
+			<div className="flex flex-row justify-around w-3/4 items-center mx-auto mt-5 text-slate-100">
 				<button className="cursor-pointer p-1">
 					<IoMdSkipBackward />
 				</button>

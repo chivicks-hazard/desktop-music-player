@@ -1,11 +1,11 @@
 import { pause, play, setSong } from "@/slices/playSlice";
+import store from "@/store";
 import { TagType } from "jsmediatags/types";
 import { useContext, useEffect, useState } from "react";
 import { FaPause, FaPlay } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
-import { parseImageData } from "../utils";
-import store from "@/store";
 import { AudioRefContext } from "../Player";
+import { parseImageData } from "../utils";
 
 interface Tag extends TagType {
 	fileName: string;
@@ -52,10 +52,10 @@ const AllTracks = () => {
 	return (
 		<section
 			id="allTracks"
-			className="h-[90dvh] p-5 bg-gray-500 overflow-y-auto"
+			className="h-[90dvh] p-5 bg-[#3d3d3d] overflow-y-auto"
 		>
 			<h2
-				className="text-4xl font-bold text-white"
+				className="text-4xl font-bold text-[#f0f8ff]"
 				onClick={() => {
 					console.log(isPlaying);
 					// console.log(loadedSong);
@@ -65,11 +65,13 @@ const AllTracks = () => {
 			</h2>
 			<div className="flex flex-col items-start gap-5 mt-5">
 				{loading ? (
-					<p className="text-2xl font-bold text-white">Loading...</p>
+					<p className="text-2xl font-bold text-[#f0f8ff]">
+						Loading...
+					</p>
 				) : (
 					songList.map((song, index) => (
 						<div
-							className="flex flex-row items-center justify-between border border-white rounded p-1 w-full"
+							className="flex flex-row items-center justify-between bg-[#282828] hover:bg-[#1f1f1f] rounded p-2 w-3/4"
 							key={index}
 							onClick={() => {
 								dispatch(setSong(song.fileName));
@@ -89,9 +91,9 @@ const AllTracks = () => {
 								<img
 									src={song && parseImageData(song)}
 									alt="album"
-									className="rounded w-14"
+									className="rounded w-20"
 								/>
-								<div className="text-white">
+								<div className="text-[#f0f8ff]">
 									<p className="font-bold">
 										{song?.tags.title}
 									</p>
@@ -102,14 +104,8 @@ const AllTracks = () => {
 							</div>
 
 							<div className="flex flex-row items-center gap-5 justify-end">
-								<div className="text-white flex flex-col items-end">
-									<p className="font-bold">
-										{song?.tags.album}
-									</p>
-									<p className="text-sm">{song?.tags.year}</p>
-								</div>
 								<button
-									className="cursor-pointer p-1"
+									className="cursor-pointer p-1 text-[#f0f8ff]"
 									onClick={() => {
 										if (!isPlaying) {
 											dispatch(play());

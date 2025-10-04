@@ -21,9 +21,9 @@ const Home = () => {
 	}, []);
 
 	return (
-		<section className="h-[90dvh] px-5 pt-5 bg-gray-500">
+		<section className="h-[90dvh] px-5 pt-5 bg-[#3d3d3d]">
 			<div id="recentlyPlayed" className="">
-				<h2 className="text-2xl font-bold text-white">
+				<h2 className="text-2xl font-bold text-[#f0f8ff]">
 					Recently Played
 				</h2>
 				<div className="flex flex-row items-center justify-around w-full gap-10 scroll-smooth overflow-x-auto whitespace-nowrap custom-scrollbar mt-10 pb-5">
@@ -38,7 +38,7 @@ const Home = () => {
 								className="rounded w-35"
 							/>
 
-							<div className="mt-2 text-white">
+							<div className="mt-2 text-[#f0f8ff]">
 								<p className="font-bold text-xl">Song Name</p>
 								<p className="text-sm">Artist Name</p>
 							</div>
@@ -47,15 +47,16 @@ const Home = () => {
 				</div>
 			</div>
 
+			{/* Most Played Songs */}
 			<div className="grid grid-rows-1 grid-cols-2 gap-5 mt-20">
 				<div id="mostPlayedSongs">
-					<h2 className="text-2xl font-bold text-white">
+					<h2 className="text-2xl font-bold text-[#f0f8ff]">
 						Most Played Songs
 					</h2>
 					<div className="flex flex-col items-start h-56 gap-5 mt-5 overflow-y-auto custom-scrollbar">
 						{Array.from({ length: 10 }, (_, index) => (
 							<div
-								className="flex flex-row items-center h-12 gap-2"
+								className="flex flex-row items-center h-12 gap-2 hover:bg-[#1f1f1f] w-full"
 								key={index}
 							>
 								<img
@@ -64,7 +65,7 @@ const Home = () => {
 									className="rounded w-14"
 								/>
 
-								<div className="text-white">
+								<div className="text-[#f0f8ff]">
 									<p className="font-bold">Song Name</p>
 									<p className="text-sm">Artist Name</p>
 								</div>
@@ -72,14 +73,16 @@ const Home = () => {
 						))}
 					</div>
 				</div>
+
+				{/* Most Played Songs */}
 				<div id="mostPlayedArtists">
-					<h2 className="text-2xl font-bold text-white">
+					<h2 className="text-2xl font-bold text-[#f0f8ff]">
 						Most Played Songs
 					</h2>
 					<div className="flex flex-col items-start h-56 gap-5 mt-5 overflow-y-auto custom-scrollbar">
 						{Array.from({ length: 10 }, (_, index) => (
 							<div
-								className="flex flex-row items-center h-12 gap-2"
+								className="flex flex-row items-center h-12 gap-2 hover:bg-[#1f1f1f] w-full"
 								key={index}
 							>
 								<img
@@ -88,7 +91,7 @@ const Home = () => {
 									className="rounded w-14"
 								/>
 
-								<div className="text-white font-bold">
+								<div className="text-[#f0f8ff] font-bold">
 									Artist Name
 								</div>
 							</div>
