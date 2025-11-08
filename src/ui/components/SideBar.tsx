@@ -38,20 +38,22 @@ const Sidebar = () => {
 						<IoMdAlbums className="text-3xl" />
 						<span className="font-medium">Albums</span>
 					</NavLink>
-					<div
+					<NavLink
+						to={"genre"}
 						id="genre"
 						className="inline-flex flex-row items-center gap-3 cursor-pointer p-5 w-full text-xl hover:bg-[#101010] rounded"
 					>
 						<GiMusicSpell className="text-3xl" />
 						<span className="font-medium">Genre</span>
-					</div>
-					<div
-						id="artist"
+					</NavLink>
+					<NavLink
+						to={"artists"}
+						id="artists"
 						className="inline-flex flex-row items-center gap-3 cursor-pointer p-5 w-full text-xl hover:bg-[#101010] rounded"
 					>
 						<IoPerson className="text-3xl" />
-						<span className="font-medium">Artist</span>
-					</div>
+						<span className="font-medium">Artists</span>
+					</NavLink>
 					<div
 						id="playlists"
 						className="inline-flex flex-row items-center gap-3 cursor-pointer p-5 w-full text-xl hover:bg-[#101010] rounded"

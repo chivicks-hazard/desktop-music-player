@@ -63,7 +63,11 @@ const AllTracks = () => {
 			>
 				All Tracks
 			</h2>
-			<div className="flex flex-col items-start gap-5 mt-5">
+			<div
+				className={`flex flex-col items-start gap-5 ${
+					loading ? "mt-5" : "mt-15"
+				}`}
+			>
 				{loading ? (
 					<p className="text-2xl font-bold text-[#f0f8ff]">
 						Loading...
